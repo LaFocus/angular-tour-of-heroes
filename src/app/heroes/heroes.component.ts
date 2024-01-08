@@ -4,7 +4,6 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HeroService } from '../hero.service';
 import { NgFor, NgIf } from '@angular/common';
-import { map, of } from 'rxjs';
 
 @Component({
   selector: 'app-heroes',
@@ -24,9 +23,10 @@ export class HeroesComponent implements OnInit {
   
   
   getHeroes(): void {
-    of(this.heroService.getHeroes())
+    this.heroService.getHeroes()
     .subscribe((heroes: any) => this.heroes = heroes);
   }
+
   
   constructor(private heroService: HeroService) {}
   
