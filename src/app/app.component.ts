@@ -5,7 +5,6 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +25,5 @@ export class AppComponent implements OnInit {
   title = 'Tour of heroes';
 
   ngOnInit(): void {
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-    });
   }
 }
